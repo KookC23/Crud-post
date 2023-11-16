@@ -83,7 +83,7 @@ const create = (req, res, next) => {
 };
 
 
-const isPoster = (req, res) => {
+const isPoster = (req, res, next) => {
   let isPoster = req.post && req.auth && req.post.postedBy._id == req.auth._id;
   if (!isPoster) {
     error: 'User is not authorized';
@@ -156,46 +156,34 @@ const photo = (req, res, next) => {
   return res.send(req.post.photo.data);
 };
 
+
 const editPost = async (req, res) => {       
   try {
     const postId = req.params.postId; 
-    const post = await Post.findById(postId);
+    const { text, photo } = req.body; 
 
-    // Verifica si el post existe y si no arrojará el siguiente error:
+    const post = await Post.findById(postId);
     if (!post) {
       return res.status(404).json({ 
         error: 'Post not found' 
       });
     }
-
-    // Imprime información para depurar
-    console.log('req.user:', req.user);
-    console.log('post.user:', post.user);
-
-    // Verifica que el user sea el mismo que realizó el post
-    if (!req.user || post.user.toString() !== req.user._id.toString()) {
-      return res.status(403).json({ 
-        error: 'No tienes permiso para editar este post.' 
-      });
-    }
-
-    // Aquí puedes realizar las actualizaciones necesarias y guardar el post
-
-    // Guarda los cambios en la base de datos
+    post.text = text;
+    post.photo = photo; 
     await post.save();
 
     return res.status(200).json({ 
-      message: 'Successfully edited!' 
+      message: 'El post ha sido editado exitosamente!' 
     });
   } catch (error) {
     console.error(error);
     return res.status(500).json({
-      error: 'Error interno del servidor'
+      error: 'No se pudo editar el post'
     });
   }
 };
 
-const remove = async (req, res) => {
+const remove = async (req, res, next) => {
   let post = req.post;
   try {
     let deletedPost = await post.remove();
@@ -206,7 +194,6 @@ const remove = async (req, res) => {
     });
   }
 };
-
 
 
 export default {
