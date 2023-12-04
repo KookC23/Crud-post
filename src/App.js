@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Formulario from './components/Formulario';
+import FormularioUno from './components/FormularioUno';
+import FormularioDos from './components/FormularioDos';
+import FormularioTres from './components/FormularioTres';
+import FormularioCuatro from './components/FormularioCuatro';
+import FormularioCinco from './components/FormularioCinco';
+import FormulariooSeis from './components/FormulariooSeis';
 import './App.css';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/Formulario" element={<Formulario/>} />
+        <Route path="/FormularioUno" element={<FormularioUno/>} />
+        <Route path="/FormularioDos" element={<FormularioDos/>} />
+        <Route path="/FormularioTres" element={<FormularioTres/>} />
+        <Route path="/FormularioCuatro" element={<FormularioCuatro/>} />
+        <Route path="/FormularioCinco" element={<FormularioCinco/>} />
+        <Route path="/FormulariooSeis" element={<FormulariooSeis/>} />
+      </Routes>
+    </Router>
   );
 }
 
