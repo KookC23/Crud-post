@@ -1,0 +1,50 @@
+
+.contenedorCarrousel{ /* Modelo del carrucel */
+    width: 100%; 
+    height: 700px;
+    overflow: hidden; /* ocultar uno detras del otro*/
+}
+
+.itemCarrousel{
+    width: 100%;
+    height: 100%;
+}
+
+.itemCarrouseliconos{
+    height: 100%;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px; 
+}
+
+.itemCarrouseliconos i{
+    color: rgb(251, 251, 251);
+    font-size: 3rem;
+}
+
+#itemCarrousel-1{ 
+  background-image: url('/public/images/foto1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+#itemCarrousel-2{
+    background-image: url('/public/images/fotoo.jpg');
+    background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+
+#itemCarrousel-3{
+  background-image: url('/public/images/uu.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
+

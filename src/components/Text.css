@@ -1,0 +1,55 @@
+
+.imagen1 {
+    background-image: url('/public/images/fas.jpg');
+    width: 100%;
+    height: 60vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 100px;
+    color: #fff;
+    text-align: center;
+  }
+.imagen1 h1 {
+    color: #fff;
+    text-align: center; 
+    font-size: 5rem;
+    padding: 15vh 40px;
+}
+  .fondo{
+    background-image: url('/public/images/her.jpg');
+  }
+
+.contenedor1{
+    box-shadow: 0 6px 20px rgba(56, 126, 255, 0.304);
+    margin: auto;
+    padding: 40px;
+    background: #fff;
+    height: 100vh;
+    width: 90%;
+}
+
+.contenedor1 h1 {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: 3rem;
+    text-align: left;
+}
+
+.contenedor1 h2  {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: 2rem;
+}
+
+.contenedor1 h3  {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    font-size: 1.2rem;
+    color: blue;
+}
+
+.contenedor1 p {
+    color: #252e48;
+    font-size: 18px;
+}
